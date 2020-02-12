@@ -1,62 +1,64 @@
 cabal-version: 1.12
-
--- This file has been generated from package.yaml by hpack version 0.31.2.
---
--- see: https://github.com/sol/hpack
---
--- hash: 79eb865cc8acf11bd35bc177c6f44c445092ed5693d0406aad362bdc9e1c10f3
-
 name:           gramps
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/gramps#readme>
-homepage:       https://github.com/githubuser/gramps#readme
-bug-reports:    https://github.com/githubuser/gramps/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2020 Author name here
+synopsis:       Grammar Tooling
+description:    Please see the README on GitHub at <https://github.com/lancelet/gramps#readme>
+homepage:       https://github.com/lancelet/gramps#readme
+bug-reports:    https://github.com/lancelet/gramps/issues
+author:         Jonathan Merritt
+maintainer:     j.s.merritt@gmail.com
+copyright:      2020 Jonathan Merritt
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
+category:       Text
 extra-source-files:
     README.md
     ChangeLog.md
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/gramps
+  location: git://github.com/lancelet/gramps.git
 
 library
+  hs-source-dirs: src
+  default-language: Haskell2010
   exposed-modules:
       Lib
-  other-modules:
-      Paths_gramps
-  hs-source-dirs:
-      src
+  ghc-options:
+    -Wall 
+    -Wincomplete-uni-patterns 
+    -Wincomplete-record-updates 
+    -Wmissing-import-lists
   build-depends:
       base >=4.7 && <5
-  default-language: Haskell2010
 
-executable gramps-exe
+executable gramps
   main-is: Main.hs
-  other-modules:
-      Paths_gramps
-  hs-source-dirs:
-      app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  hs-source-dirs: app
+  default-language: Haskell2010
+  ghc-options: 
+    -Wall 
+    -Wincomplete-uni-patterns 
+    -Wincomplete-record-updates 
+    -Wmissing-import-lists
+    -threaded
+    -rtsopts
+    -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
     , gramps
-  default-language: Haskell2010
 
 test-suite gramps-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
-  other-modules:
-      Paths_gramps
-  hs-source-dirs:
-      test
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  hs-source-dirs: test
+  default-language: Haskell2010
+  ghc-options:
+    -Wall 
+    -Wincomplete-uni-patterns 
+    -Wincomplete-record-updates 
+    -Wmissing-import-lists
   build-depends:
       base >=4.7 && <5
     , gramps
-  default-language: Haskell2010
